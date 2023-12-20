@@ -1,0 +1,45 @@
+{
+  "name": "react-motion-trail-animation",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Aspin Tojps <3via.idaspin@gmail.com>",
+  "description": "A library to make animations where images are shown along the path of the user motion.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "/lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idaspin/react-motion-trail-animation.git"
+  },
+  "scripts": {
+    "watch": "tsc -w",
+    "build": "tsc --copy-files",
+    "resettime": "del .timetracker"
+  },
+  "keywords": [
+    "react-component",
+    "react-native",
+    "gallery",
+    "images",
+    "mouse",
+    "react"
+  ],
+  "peerDependencies": {
+    "react-dom": ">= 18.2.0"
+  },
+  "bugs": {
+    "url": "https://github.com/idaspin/react-motion-trail-animation/issues"
+  },
+  "homepage": "https://github.com/idaspin/react-motion-trail-animation#readme",
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3"
+  }
+}
