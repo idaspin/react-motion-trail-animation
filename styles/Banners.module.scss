@@ -1,0 +1,14 @@
+.banners {
+    position: fixed;
+    width: 100vw;
+    height: 100vw;
+    top:0;
+    left: 0;
+
+    &__img {
+        position: fixed;
+        background-size: cover;
+        border-radius: 7px;
+        opacity: 0;
+    }
+}

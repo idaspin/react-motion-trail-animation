@@ -1,6 +1,4 @@
-.DS_Store
-lib/
-node_modules/
-*.log
 .vscode
 .vscode/*
+node_modules
+node_modules/*

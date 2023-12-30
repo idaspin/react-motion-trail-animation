@@ -1,15 +1,24 @@
-'use client'
-import React, { MouseEvent, RefObject } from "react";
-import { Root, createRoot } from "react-dom/client";
-import { MotionTrailAnimationProps } from "./types";
+import styles from "@/styles/Banners.module.scss";
+import { MouseEvent, useRef } from "react";
+import { Root } from 'react-dom/client';
 
-export default function MotionTrailAnimation(props: MotionTrailAnimationProps) {
+export default function Banners() {
 
-    const [ width, height ] = !props.imageWidth || !props.imageHeight ? [ 150, 225 ] : [ props.imageWidth, props.imageHeight ];
+    const [ width, height ] = [ 267, 150 ];
 
-    const images = props.imagesSet ?? [];
+    const images = [
+        "/images/banners/1.jpg",
+        "/images/banners/2.jpg",
+        "/images/banners/3.jpg",
+        "/images/banners/4.jpg",
+        "/images/banners/5.jpg",
+        "/images/banners/6.jpg",
+        "/images/banners/7.jpg",
+        "/images/banners/8.jpg",
+        "/images/banners/9.jpg"
+    ];
 
-    const container: RefObject<HTMLDivElement> = props.canvasRef;
+    const container = useRef<HTMLDivElement>(null);
     let root: Root | undefined;
     
     let [ last_i, last_x, last_y, last_time ] = [ 0, 0, 0, Date.now() ];
@@ -28,14 +37,17 @@ export default function MotionTrailAnimation(props: MotionTrailAnimationProps) {
     
     const draw = (x: number, y: number) => {
         if (!container.current) return;
-        if (!root) root = createRoot(container.current);
 
         const image = document.createElement("img");
 
+        image.classList.add(styles.banners__img);
         image.src = `${images[last_i]}`;
         image.width = width;
         image.height = height;
-        image.style.cssText = `position: fixed; background-size: cover; border-radius: 7px; opacity: 0; width: ${width}px; height: ${height}px; top: ${y - height/2}px; left: ${x- width/2}px;`;
+        image.style.width = `${width}px`;
+        image.style.height = `${height}px`;
+        image.style.top = `${y - height/2}px`;
+        image.style.left = `${x- width/2}px`;
 
         container.current.append(image);
 
@@ -61,16 +73,5 @@ export default function MotionTrailAnimation(props: MotionTrailAnimationProps) {
         if (container.current) container.current.removeChild(container.current.childNodes[0]);
     }
 
-    return ( 
-        <div    style={{
-                    position: "fixed",
-                    width: "100vw",
-                    height: "100vw",
-                    top: 0,
-                    left: 0
-                }} 
-                ref={container} 
-                onMouseMove={manageMouseMove} 
-        />
-    );
+    return ( <div className={styles.banners} ref={container} onMouseMove={manageMouseMove} /> );
 }
