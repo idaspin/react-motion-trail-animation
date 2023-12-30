@@ -25,6 +25,7 @@ export default function Banners() {
 }
 ```
 
+Developed for private use. I wanted to get rid of unnecessary code (gsap, etc.)
 Inspired by *Manoela Ilic in Playground on October 18, 2023*
 
 [![Ideas for Image Motion Trail Animations](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2023/10/classic.2023-10-18-11_16_37-1.gif?x45784)](https://tympanus.net/codrops/2023/10/18/ideas-for-image-motion-trail-animations/)
